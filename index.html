@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEXAUR - Innovative Solutions. Made In India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === WEXAUR BRAND COLORS === */
+        :root {
+            --wexaur-teal: #00695C;
+            --wexaur-green: #4CAF50;
+            --wexaur-orange: #FF9800;
+            --wexaur-purple: #9C27B0;
+            --wexaur-dark: #1a237e;
+            --wexaur-light: #f8f9fa;
+            --wexaur-white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, var(--wexaur-teal) 0%, var(--wexaur-purple) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--wexaur-orange) 0%, var(--wexaur-green) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: var(--wexaur-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === NAVIGATION === */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--wexaur-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--wexaur-teal);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background: var(--wexaur-dark);
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 120px 0 80px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .wexaur-logo {
+            font-size: 5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .wexaur-logo .W {
+            color: var(--wexaur-teal);
+        }
+        .wexaur-logo .E {
+            color: var(--wexaur-green);
+        }
+        .wexaur-logo .X {
+            color: var(--wexaur-orange);
+        }
+        .wexaur-logo .A {
+            color: var(--wexaur-purple);
+        }
+        .wexaur-logo .U {
+            color: var(--wexaur-teal);
+        }
+        .wexaur-logo .R {
+            color: var(--wexaur-green);
+        }
+
+        .tagline {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .tagline-main {
+            display: block;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .tagline-sub {
+            display: block;
+            font-size: 2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--wexaur-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e68900;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--wexaur-teal);
+            transform: translateY(-3px);
+        }
+
+        .floating-apps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            max-width: 400px;
+            margin: 40px auto 0;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            animation: float 4s ease-in-out infinite;
+            margin: 0 auto;
+        }
+
+        .app-icon:nth-child(1) { background: var(--wexaur-teal); animation-delay: 0s; }
+        .app-icon:nth-child(2) { background: var(--wexaur-green); animation-delay: 0.5s; }
+        .app-icon:nth-child(3) { background: var(--wexaur-orange); animation-delay: 1s; }
+        .app-icon:nth-child(4) { background: var(--wexaur-purple); animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(2deg); }
+            66% { transform: translateY(-8px) rotate(-2deg); }
+        }
+
+        /* === SECTIONS COMMON === */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--wexaur-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        /* === ABOUT SECTION === */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 25px;
+            background: var(--wexaur-light);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--wexaur-teal);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .stat p {
+            color: #666;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .india-flag {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+            font-size: 120px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        /* === APPS SECTION === */
+        .apps {
+            background: var(--wexaur-light);
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .app-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--wexaur-teal);
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .app-name {
+            font-size: 1.5rem;
+            color: var(--wexaur-dark);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .app-status {
+            color: var(--wexaur-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Download Section Styles */
+        .download-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 50px;
+            background: linear-gradient(135deg, var(--wexaur-teal), var(--wexaur-purple));
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .download-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .download-section p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .telegram-btn {
+            background: var(--wexaur-orange);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        .telegram-btn:hover {
+            background: #e68900;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+        }
+
+        /* === FEATURES SECTION === */
+        .features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            background: var(--wexaur-light);
+            padding: 40px 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--wexaur-teal);
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            color: var(--wexaur-dark);
+            font-size: 1.3rem;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* === CONTACT SECTION === */
+        .contact {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-title::after {
+            background: var(--wexaur-orange);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1rem;
+        }
+
+        .contact-method i {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form .btn {
+            align-self: flex-start;
+            margin-top: 10px;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background: var(--wexaur-dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand .logo-text {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--wexaur-orange);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--wexaur-orange);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 30px 0;
+                gap: 25px;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .wexaur-logo {
+                font-size: 3.5rem;
+            }
+
+            .tagline {
+                font-size: 2rem;
+            }
+
+            .tagline-main {
+                font-size: 2.2rem;
+            }
+
+            .tagline-sub {
+                font-size: 1.5rem;
+            }
+
+            .hero-content,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .india-flag {
+                width: 250px;
+                height: 167px;
+                font-size: 100px;
+            }
+
+            .floating-apps {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 200px;
+            }
+
+            .app-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+
+            .download-section {
+                padding: 30px 20px;
+                margin-top: 40px;
+            }
+
+            .download-section h3 {
+                font-size: 1.8rem;
+            }
+
+            .download-section p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wexaur-logo {
+                font-size: 2.8rem;
+            }
+
+            .tagline {
+                font-size: 1.6rem;
+            }
+
+            .tagline-main {
+                font-size: 1.8rem;
+            }
+
+            .tagline-sub {
+                font-size: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .india-flag {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-text">WEXAUR</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#apps" class="nav-link">Our Apps</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="wexaur-logo">
+                    <span class="W">W</span>
+                    <span class="E">E</span>
+                    <span class="X">X</span>
+                    <span class="A">A</span>
+                    <span class="U">U</span>
+                    <span class="R">R</span>
+                </div>
+                
+                <div class="tagline">
+                    <span class="tagline-main">Innovative Solutions.</span>
+                    <span class="tagline-sub">Made In India</span>
+                </div>
+
+                <p class="hero-description">
+                    Creating powerful mobile applications that simplify life and enhance productivity. 
+                    20+ apps serving thousands of users worldwide with Indian innovation.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#apps" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Explore Apps
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Get Started
+                    </a>
+                </div>
+
+                <div class="floating-apps">
+                    <div class="app-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="app-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="app-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="app-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About WEXAUR</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        WEXAUR is a passionate Indian software development company creating 
+                        innovative mobile applications that make everyday life easier. We believe 
+                        in the power of technology to solve real-world problems with simple, 
+                        elegant solutions that everyone can use.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>20+</h3>
+                            <p>Applications</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10K+</h3>
+                            <p>Downloads</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Made in India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="india-flag">
+                        🇮🇳
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="apps">
+        <div class="container">
+            <h2 class="section-title">Our Applications</h2>
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-name">WexNoteBook</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexMusicPlayer</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexCalculator</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexWallet</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexFit</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexPaint</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexPlanner</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexReminder</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexStopWatch</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexTasks</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexCurrencyConverter</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+                <div class="app-card">
+                    <div class="app-name">WexUnitConverter</div>
+                    <div class="app-status">✓ Published</div>
+                </div>
+            </div>
+
+            <!-- Download Now Section -->
+            <div class="download-section">
+                <h3>Download Now</h3>
+                <p>All apps available on Telegram</p>
+                <a href="https://t.me/wexaurofficial" class="telegram-btn">
+                    <i class="fab fa-telegram"></i>
+                    @wexaurofficial
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose WEXAUR?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>High Performance</h3>
+                    <p>Lightning fast apps optimized for best user experience and smooth operation</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Safe</h3>
+                    <p>Your data privacy and security is our top priority with encrypted storage</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>User Friendly</h3>
+                    <p>Intuitive interfaces designed for everyone, from beginners to experts</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Regular Updates</h3>
+                    <p>Continuous improvements, new features, and bug fixes for better experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Build Something Amazing Together</h3>
+                    <p>Have an idea? Want to collaborate? We'd love to hear from you and discuss how we can work together!</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@wexaur.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 XXXXX XXXXX</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Proudly Made In India</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-text">WEXAUR</div>
+                    <p class="tagline">Innovative Solutions. Made In India</p>
+                    <p>Creating technology that makes life better, one app at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#apps">Apps</a>
+                    <a href="#features">Features</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-google-play"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WEXAUR. All rights reserved. Proudly Made in India 🇮🇳</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
